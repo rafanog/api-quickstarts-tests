@@ -205,12 +205,12 @@ describe('Request with authorization header field', function() {
       });
     });
 
-    it('GET /api/private-scoped return 403 Insufficent scope', function(done) {
+    it('GET /api/private-scoped return 401 Unauthorized', function(done) {
       chai.request(apiURL)
       .get('/api/private-scoped')
       .set('Authorization', 'Bearer ' + validToken)
       .end(function(err, res) {
-        res.should.have.status(403);
+        res.should.have.status(401);
         done();
       });
     });
@@ -268,12 +268,12 @@ describe('Request with authorization header field', function() {
       });
     });
 
-    it('GET /api/private-scoped return 403 Insufficent scope', function(done) {
+    it('GET /api/private-scoped return 401 Unauthorized', function(done) {
       chai.request(apiURL)
       .get('/api/private-scoped')
       .set('Authorization', 'Bearer ' + validToken)
       .end(function(err, res) {
-        res.should.have.status(403);
+        res.should.have.status(401);
         done();
       });
     });
